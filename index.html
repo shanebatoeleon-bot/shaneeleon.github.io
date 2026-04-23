@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shane B. Eleon | Executive Assistant Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #FDFBF7;
+    --ink: #1C1A17;
+    --ink-muted: #5C5849;
+    --ink-light: #9C9488;
+    --gold: #C49A3C;
+    --gold-light: #E8D5A3;
+    --gold-dark: #8A6A1F;
+    --teal: #2D6E6E;
+    --teal-light: #E0EDEC;
+    --teal-mid: #4A9494;
+    --border: #DDD8CC;
+    --card-bg: #FDFBF7;
+    --section-bg: #F0EBE0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(245, 240, 232, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.85rem; font-weight: 500; color: var(--ink-muted);
+    text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-dark); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; padding-top: 60px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    position: relative; overflow: hidden;
+  }
+  .hero-left {
+    padding: 5rem 3rem 4rem 4rem;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; z-index: 2;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold-dark); margin-bottom: 1.5rem;
+  }
+  .hero-tag::before {
+    content: ''; width: 28px; height: 1px; background: var(--gold);
+  }
+  .hero-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.08;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  .hero-name em { font-style: italic; color: var(--teal); }
+  .hero-title {
+    font-size: 1rem; font-weight: 400; color: var(--ink-muted);
+    margin-bottom: 2rem; letter-spacing: 0.02em;
+  }
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-bottom: 2.5rem;
+    border-top: 1px solid var(--border); padding-top: 2rem;
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem; color: var(--gold-dark); line-height: 1;
+  }
+  .stat-label { font-size: 0.75rem; color: var(--ink-muted); margin-top: 4px; }
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--ink); color: var(--cream);
+    padding: 0.75rem 1.75rem; border-radius: 4px;
+    font-size: 0.875rem; font-weight: 500; text-decoration: none;
+    letter-spacing: 0.02em; transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--teal); }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1.5px solid var(--ink); color: var(--ink);
+    padding: 0.75rem 1.75rem; border-radius: 4px;
+    font-size: 0.875rem; font-weight: 500; text-decoration: none;
+    letter-spacing: 0.02em; transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+
+  .hero-right {
+    background: var(--teal);
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem;
+  }
+  .hero-bg-pattern {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.06;
+    background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%);
+    background-size: 20px 20px;
+  }
+  .hero-quote-card {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px; padding: 2rem; position: relative; z-index: 2;
+    backdrop-filter: blur(4px);
+  }
+  .hero-quote-card blockquote {
+    font-family: 'DM Serif Display', serif; font-style: italic;
+    font-size: 1.25rem; color: #fff; line-height: 1.5; margin-bottom: 1rem;
+  }
+  .hero-quote-meta { font-size: 0.8rem; color: rgba(255,255,255,0.65); }
+
+  .hero-skills-scroll {
+    position: absolute; top: calc(60px + 2rem); left: 2rem; right: 2rem; z-index: 2;
+    display: flex; gap: 0.6rem; flex-wrap: wrap;
+  }
+  .skill-chip {
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.9); border-radius: 50px;
+    font-size: 0.72rem; font-weight: 500; padding: 4px 12px;
+  }
+
+  /* SECTIONS */
+  section { padding: 5rem 4rem; }
+  .section-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--gold-dark);
+    display: flex; align-items: center; gap: 10px; margin-bottom: 0.75rem;
+  }
+  .section-label::after { content: ''; flex: 0 0 40px; height: 1px; background: var(--gold); }
+  .section-heading {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.15; margin-bottom: 1rem;
+  }
+  .section-sub { font-size: 1rem; color: var(--ink-muted); max-width: 560px; line-height: 1.7; }
+
+  /* ABOUT */
+  .about-section { background: var(--warm-white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; margin-top: 3rem; }
+  .about-info h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; margin-bottom: 1.2rem; }
+  .about-info p { color: var(--ink-muted); line-height: 1.8; margin-bottom: 1rem; font-size: 0.95rem; }
+  .about-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+  .detail-item { display: flex; flex-direction: column; gap: 3px; }
+  .detail-key { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-light); font-weight: 600; }
+  .detail-val { font-size: 0.9rem; color: var(--ink); font-weight: 500; }
+
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .skill-bar-item { display: flex; flex-direction: column; gap: 6px; }
+  .skill-bar-header { display: flex; justify-content: space-between; font-size: 0.85rem; }
+  .skill-bar-label { font-weight: 500; color: var(--ink); }
+  .skill-bar-pct { color: var(--teal); font-weight: 600; }
+  .skill-bar-track {
+    height: 4px; background: var(--border); border-radius: 2px; overflow: hidden;
+  }
+  .skill-bar-fill {
+    height: 100%; background: var(--teal); border-radius: 2px;
+    transform-origin: left; animation: grow 1.2s ease forwards;
+  }
+  @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+  /* EXPERIENCE TIMELINE */
+  .experience-section { background: var(--section-bg); }
+  .timeline { position: relative; margin-top: 3rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 180px; top: 0; bottom: 0;
+    width: 1px; background: var(--border);
+  }
+  .timeline-item {
+    display: grid; grid-template-columns: 180px 1fr;
+    gap: 2.5rem; margin-bottom: 2.5rem; position: relative;
+  }
+  .timeline-date {
+    text-align: right; padding-right: 2.5rem; padding-top: 0.1rem;
+  }
+  .tl-year {
+    font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--teal);
+  }
+  .tl-org { font-size: 0.78rem; color: var(--ink-light); margin-top: 3px; }
+  .timeline-dot {
+    position: absolute; left: 172px; top: 6px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--warm-white); border: 2px solid var(--teal); z-index: 1;
+  }
+  .timeline-content {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 8px; padding: 1.5rem 2rem;
+  }
+  .tl-role { font-weight: 600; font-size: 1rem; margin-bottom: 0.5rem; }
+  .tl-desc { font-size: 0.9rem; color: var(--ink-muted); line-height: 1.7; }
+  .tl-achievements { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .achievement-badge {
+    background: var(--teal-light); color: var(--teal);
+    font-size: 0.75rem; font-weight: 500; padding: 3px 10px; border-radius: 50px;
+    border: 1px solid rgba(45, 110, 110, 0.2);
+  }
+
+  /* PROJECTS */
+  .projects-section { background: var(--warm-white); }
+  .projects-tabs {
+    display: flex; gap: 0.5rem; margin: 2rem 0;
+    border-bottom: 1px solid var(--border); padding-bottom: 0;
+  }
+  .tab-btn {
+    padding: 0.6rem 1.2rem; font-size: 0.85rem; font-weight: 500;
+    color: var(--ink-muted); background: none; border: none; cursor: pointer;
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+    transition: all 0.2s;
+  }
+  .tab-btn.active { color: var(--teal); border-bottom-color: var(--teal); }
+  .tab-btn:hover { color: var(--ink); }
+  .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .project-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;
+  }
+  .project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+  .project-card-header {
+    padding: 1.5rem; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .project-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+  }
+  .project-type {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold-dark); background: var(--gold-light); padding: 3px 10px; border-radius: 50px;
+  }
+  .project-card-body { padding: 1.5rem; }
+  .project-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .project-desc { font-size: 0.84rem; color: var(--ink-muted); line-height: 1.6; }
+  .project-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 1rem; }
+  .project-tag {
+    font-size: 0.7rem; background: var(--section-bg); color: var(--ink-muted);
+    padding: 2px 8px; border-radius: 4px;
+  }
+  .project-card-footer {
+    padding: 1rem 1.5rem; border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .project-metric { font-size: 0.8rem; color: var(--teal); font-weight: 600; }
+  .view-btn {
+    font-size: 0.78rem; color: var(--ink-muted); background: none; border: none;
+    cursor: pointer; text-decoration: underline; text-underline-offset: 3px;
+  }
+  .view-btn:hover { color: var(--teal); }
+
+  /* SAMPLE WORK MODAL */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: rgba(28,26,23,0.65); backdrop-filter: blur(4px);
+    align-items: center; justify-content: center; padding: 2rem;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--warm-white); border-radius: 12px;
+    max-width: 720px; width: 100%; max-height: 85vh; overflow-y: auto;
+    border: 1px solid var(--border);
+  }
+  .modal-header {
+    padding: 1.5rem 2rem; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0;
+    background: var(--warm-white); z-index: 1;
+  }
+  .modal-title { font-family: 'DM Serif Display', serif; font-size: 1.3rem; }
+  .modal-close {
+    width: 32px; height: 32px; border-radius: 50%; background: var(--section-bg);
+    border: none; cursor: pointer; font-size: 1.1rem; color: var(--ink-muted);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .modal-body { padding: 2rem; }
+
+  /* EMAIL SAMPLE */
+  .email-sample {
+    background: #fff; border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+  }
+  .email-toolbar {
+    background: #F8F8F8; border-bottom: 1px solid var(--border);
+    padding: 0.75rem 1.25rem; display: flex; gap: 0.5rem;
+  }
+  .email-dot { width: 12px; height: 12px; border-radius: 50%; }
+  .email-meta { padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); }
+  .email-field { display: grid; grid-template-columns: 60px 1fr; gap: 0.5rem; font-size: 0.87rem; margin-bottom: 0.4rem; }
+  .email-field-key { color: var(--ink-light); font-weight: 500; }
+  .email-body { padding: 1.5rem; font-size: 0.9rem; line-height: 1.8; color: var(--ink); white-space: pre-line; }
+
+  /* SPREADSHEET SAMPLE */
+  .spreadsheet-sample { overflow-x: auto; }
+  .spreadsheet-sample table {
+    width: 100%; border-collapse: collapse; font-size: 0.83rem;
+  }
+  .spreadsheet-sample th {
+    background: var(--teal); color: #fff; padding: 8px 12px; text-align: left;
+    font-weight: 500; font-size: 0.78rem;
+  }
+  .spreadsheet-sample td { padding: 7px 12px; border-bottom: 1px solid var(--border); }
+  .spreadsheet-sample tr:nth-child(even) td { background: var(--cream); }
+  .status-badge {
+    font-size: 0.7rem; padding: 2px 8px; border-radius: 50px; font-weight: 600;
+  }
+  .status-done { background: #E0F2EC; color: #1A6B4A; }
+  .status-pending { background: #FEF3CD; color: #856404; }
+  .status-review { background: #E0EDEC; color: var(--teal); }
+
+  /* REPORT SAMPLE */
+  .report-sample {
+    background: #fff; border: 1px solid var(--border); border-radius: 8px;
+    padding: 2rem; font-size: 0.88rem;
+  }
+  .report-sample h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 0.5rem; }
+  .report-section { margin-bottom: 1.5rem; }
+  .report-section h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--teal); font-weight: 600; margin-bottom: 0.5rem; border-bottom: 1px solid var(--teal-light); padding-bottom: 4px; }
+  .report-section p { color: var(--ink-muted); line-height: 1.75; }
+  .report-metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin: 1rem 0; }
+  .r-metric { background: var(--section-bg); padding: 1rem; border-radius: 6px; text-align: center; }
+  .r-num { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--teal); }
+  .r-lbl { font-size: 0.75rem; color: var(--ink-muted); }
+
+  /* CALENDAR SAMPLE */
+  .calendar-sample { background: #fff; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .cal-header { background: var(--teal); color: #fff; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+  .cal-header h4 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; }
+  .cal-days { display: grid; grid-template-columns: repeat(5,1fr); border-bottom: 1px solid var(--border); }
+  .cal-day-head { text-align: center; font-size: 0.72rem; font-weight: 600; color: var(--ink-muted); padding: 8px; text-transform: uppercase; }
+  .cal-slots { display: grid; grid-template-columns: 60px repeat(5,1fr); }
+  .cal-time { font-size: 0.72rem; color: var(--ink-light); padding: 8px; text-align: right; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .cal-cell { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 4px; min-height: 44px; }
+  .cal-event {
+    border-radius: 4px; padding: 3px 6px; font-size: 0.7rem; font-weight: 500; line-height: 1.3;
+  }
+  .cal-ev-teal { background: var(--teal-light); color: var(--teal); }
+  .cal-ev-gold { background: #FFF0CC; color: var(--gold-dark); }
+  .cal-ev-pink { background: #FDEEF6; color: #A0306A; }
+  .cal-ev-gray { background: var(--section-bg); color: var(--ink-muted); }
+
+  /* SOP SAMPLE */
+  .sop-sample { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; }
+  .sop-step { display: flex; gap: 1rem; margin-bottom: 1.2rem; align-items: flex-start; }
+  .sop-num {
+    min-width: 28px; height: 28px; border-radius: 50%;
+    background: var(--teal); color: #fff; font-size: 0.8rem; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .sop-content h5 { font-size: 0.9rem; font-weight: 600; margin-bottom: 3px; }
+  .sop-content p { font-size: 0.83rem; color: var(--ink-muted); line-height: 1.6; }
+
+  /* TABS hidden logic */
+  .project-panel { display: none; }
+  .project-panel.active { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+  /* TESTIMONIALS */
+  .testimonials-section { background: var(--section-bg); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3rem; }
+  .testimonial-card {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 2rem;
+  }
+  .testimonial-quote {
+    font-family: 'DM Serif Display', serif; font-size: 1rem; color: var(--ink);
+    line-height: 1.7; margin-bottom: 1.5rem; font-style: italic;
+  }
+  .testimonial-quote::before { content: '\201C'; font-size: 2rem; color: var(--gold); line-height: 0; vertical-align: -0.5rem; margin-right: 4px; }
+  .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+  .t-avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--teal); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; font-weight: 600; flex-shrink: 0;
+  }
+  .t-name { font-size: 0.85rem; font-weight: 600; }
+  .t-role { font-size: 0.75rem; color: var(--ink-muted); }
+
+  /* CONTACT */
+  .contact-section { background: var(--ink); color: #fff; }
+  .contact-section .section-label { color: var(--gold-light); }
+  .contact-section .section-label::after { background: var(--gold); }
+  .contact-section .section-heading { color: #fff; }
+  .contact-section .section-sub { color: rgba(255,255,255,0.6); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+  .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+  .contact-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .contact-icon {
+    width: 40px; height: 40px; border-radius: 8px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; flex-shrink: 0;
+  }
+  .contact-text .c-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); font-weight: 600; }
+  .contact-text .c-val { font-size: 0.9rem; color: rgba(255,255,255,0.9); margin-top: 2px; }
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-form input, .contact-form textarea {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px; padding: 0.75rem 1rem; color: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    width: 100%; outline: none; transition: border 0.2s;
+  }
+  .contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .contact-form input:focus, .contact-form textarea:focus { border-color: var(--teal-mid); }
+  .contact-form textarea { height: 100px; resize: vertical; }
+  .contact-form button {
+    background: var(--teal); color: #fff; border: none;
+    padding: 0.85rem; border-radius: 6px; font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: background 0.2s;
+  }
+  .contact-form button:hover { background: var(--teal-mid); }
+  .form-note { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-align: center; }
+
+  /* FOOTER */
+  footer {
+    background: #111; color: rgba(255,255,255,0.4);
+    text-align: center; padding: 1.5rem; font-size: 0.8rem;
+  }
+
+  /* Scroll anim */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .projects-grid, .project-panel.active { grid-template-columns: 1fr 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    section { padding: 3rem 1.5rem; }
+    .timeline::before { left: 0; }
+    .timeline-item { grid-template-columns: 1fr; }
+    .timeline-date { text-align: left; padding-right: 0; }
+    .timeline-dot { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Shane B. Eleon</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Sample Work</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding:0;">
+  <div class="hero-left">
+    <div class="hero-tag">Executive Assistant Portfolio</div>
+    <h1 class="hero-name">Shane B.<br><em>Eleon</em></h1>
+    <p class="hero-title">Compliance & Operations Support Specialist · Remote-Ready</p>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div>
+        <div class="stat-num">900+</div>
+        <div class="stat-label">Records Managed</div>
+      </div>
+      <div>
+        <div class="stat-num">96%</div>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">View Sample Work →</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-skills-scroll">
+      <span class="skill-chip">Calendar Management</span>
+      <span class="skill-chip">Compliance Tracking</span>
+      <span class="skill-chip">Google Workspace</span>
+      <span class="skill-chip">Trello / Asana</span>
+      <span class="skill-chip">CRM Systems</span>
+      <span class="skill-chip">Process Improvement</span>
+      <span class="skill-chip">Executive Correspondence</span>
+      <span class="skill-chip">Data Management</span>
+      <span class="skill-chip">Stakeholder Coordination</span>
+      <span class="skill-chip">Report Writing</span>
+    </div>
+    <div class="hero-quote-card">
+      <blockquote>"Detail-oriented, reliable, and organized — turning administrative chaos into seamless operations."</blockquote>
+      <p class="hero-quote-meta">Baguio City, Philippines · Available for AU &amp; US time zones · Remote-ready</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="section-label">Who I Am</div>
+  <h2 class="section-heading">Experienced. Reliable.<br>Detail-Oriented.</h2>
+  <div class="about-grid fade-in">
+    <div class="about-info">
+      <h3>Professional Profile</h3>
+      <p>I'm an Executive Assistant with over 10 years of experience supporting senior leaders in administrative operations, compliance, and documentation management. My background spans government operations, procurement, client support, and digital workflow systems.</p>
+      <p>With a Master's in Public Administration and specialized Virtual Assistant training, I bring a strong foundation in both public-sector governance and modern remote work tools.</p>
+      <div class="about-details">
+        <div class="detail-item"><span class="detail-key">Location</span><span class="detail-val">Baguio City, PH</span></div>
+        <div class="detail-item"><span class="detail-key">Time Zones</span><span class="detail-val">AU & US Friendly</span></div>
+        <div class="detail-item"><span class="detail-key">Education</span><span class="detail-val">MPA — BSU</span></div>
+        <div class="detail-item"><span class="detail-key">Status</span><span class="detail-val">Available Remotely</span></div>
+        <div class="detail-item"><span class="detail-key">Email</span><span class="detail-val">shanebatoeleon@gmail.com</span></div>
+        <div class="detail-item"><span class="detail-key">LinkedIn</span><span class="detail-val">/in/shane-bato-eleon</span></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin-bottom:1.2rem;">Core Competencies</h3>
+      <div class="skills-grid">
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span class="skill-bar-label">Calendar Management</span><span class="skill-bar-pct">98%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:98%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span class="skill-bar-label">Document Management</span><span class="skill-bar-pct">97%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:97%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span class="skill-bar-label">Compliance Tracking</span><span class="skill-bar-pct">95%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span class="skill-bar-label">Email & Communication</span><span class="skill-bar-pct">96%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:96%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span class="skill-bar-label">Google Workspace</span><span class="skill-bar-pct">92%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:92%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span class="skill-bar-label">Trello / Asana</span><span class="skill-bar-pct">90%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span class="skill-bar-label">Report Writing</span><span class="skill-bar-pct">94%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:94%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span class="skill-bar-label">CRM & Database</span><span class="skill-bar-pct">88%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width:88%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience-section" id="experience">
+  <div class="section-label">Career Journey</div>
+  <h2 class="section-heading">Professional Experience</h2>
+  <p class="section-sub">A decade of progressive administrative and compliance expertise in the public sector, now extended to international remote clients.</p>
+  <div class="timeline fade-in">
+    <div class="timeline-item">
+      <div class="timeline-date">
+        <div class="tl-year">2022–Present</div>
+        <div class="tl-org">LGU Benguet</div>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="tl-role">Executive Support & Compliance Coordinator</div>
+        <div class="tl-desc">Primary point of contact for business compliance and administrative operations. Managed and validated 900+ business records with 100% accuracy. Supported digital business processing systems and workflow improvements. Prepared reports, proposals, and executive correspondence.</div>
+        <div class="tl-achievements">
+          <span class="achievement-badge">900+ Records Managed</span>
+          <span class="achievement-badge">100% Accuracy Rate</span>
+          <span class="achievement-badge">Digital Workflow Improvement</span>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">
+        <div class="tl-year">2018–2024</div>
+        <div class="tl-org">LGU Benguet</div>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="tl-role">Administrative Officer / Operations & Procurement Support</div>
+        <div class="tl-desc">Managed procurement and administrative processes for the local government unit. Streamlined document processing workflows and maintained strict compliance with government regulations and procurement policies.</div>
+        <div class="tl-achievements">
+          <span class="achievement-badge">15% Efficiency Improvement</span>
+          <span class="achievement-badge">Procurement Management</span>
+          <span class="achievement-badge">Regulatory Compliance</span>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">
+        <div class="tl-year">2017–2018</div>
+        <div class="tl-org">LGU Benguet</div>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="tl-role">Client & Operations Support</div>
+        <div class="tl-desc">Supported department heads with scheduling and document preparation. Managed client inquiries and maintained comprehensive records for multiple departments simultaneously.</div>
+        <div class="tl-achievements">
+          <span class="achievement-badge">Executive Support</span>
+          <span class="achievement-badge">Scheduling & Coordination</span>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">
+        <div class="tl-year">2015</div>
+        <div class="tl-org">SynerG BPO</div>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="tl-role">Non-Voice Customer Support Agent</div>
+        <div class="tl-desc">Managed 100+ email and chat inquiries daily. Maintained a 96% satisfaction rate while providing professional, timely responses to international clients across multiple time zones.</div>
+        <div class="tl-achievements">
+          <span class="achievement-badge">96% Satisfaction Rate</span>
+          <span class="achievement-badge">100+ Daily Inquiries</span>
+          <span class="achievement-badge">International Clients</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE WORK / PROJECTS -->
+<section class="projects-section" id="projects">
+  <div class="section-label">Portfolio</div>
+  <h2 class="section-heading">Sample Work & Projects</h2>
+  <p class="section-sub">Interactive samples demonstrating key skills across executive support, compliance, communications, and operations.</p>
+  
+  <div class="projects-tabs">
+    <button class="tab-btn active" onclick="switchTab(event,'all')">All Work</button>
+    <button class="tab-btn" onclick="switchTab(event,'admin')">Admin & EA</button>
+    <button class="tab-btn" onclick="switchTab(event,'compliance')">Compliance</button>
+    <button class="tab-btn" onclick="switchTab(event,'comms')">Communications</button>
+    <button class="tab-btn" onclick="switchTab(event,'ops')">Operations</button>
+  </div>
+
+  <div id="panel-all" class="project-panel active fade-in">
+    <!-- Card 1 -->
+    <div class="project-card" onclick="openModal('email')">
+      <div class="project-card-header">
+        <div class="project-icon" style="background:#E0EDEC;">✉️</div>
+        <span class="project-type">Communications</span>
+      </div>
+      <div class="project-card-body">
+        <div class="project-title">Executive Email Templates</div>
+        <div class="project-desc">Professional email drafts for client onboarding, stakeholder updates, and executive correspondence — crafted for clarity and professionalism.</div>
+        <div class="project-tags">
+          <span class="project-tag">Email Drafting</span>
+          <span class="project-tag">Executive Tone</span>
+          <span class="project-tag">Stakeholder Comms</span>
+        </div>
+      </div>
+      <div class="project-card-footer">
+        <span class="project-metric">3 sample emails</span>
+        <button class="view-btn">View Sample →</button>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="project-card" onclick="openModal('calendar')">
+      <div class="project-card-header">
+        <div class="project-icon" style="background:#FFF0CC;">📅</div>
+        <span class="project-type">EA Support</span>
+      </div>
+      <div class="project-card-body">
+        <div class="project-title">Executive Calendar Management</div>
+        <div class="project-desc">A sample weekly schedule demonstrating multi-timezone coordination, blocked focus time, and priority meeting management for a busy executive.</div>
+        <div class="project-tags">
+          <span class="project-tag">Calendar Blocking</span>
+          <span class="project-tag">Multi-Timezone</span>
+          <span class="project-tag">Priority Management</span>
+        </div>
+      </div>
+      <div class="project-card-footer">
+        <span class="project-metric">5-day view sample</span>
+        <button class="view-btn">View Sample →</button>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="project-card" onclick="openModal('report')">
+      <div class="project-card-header">
+        <div class="project-icon" style="background:#E0EDEC;">📊</div>
+        <span class="project-type">Reporting</span>
+      </div>
+      <div class="project-card-body">
+        <div class="project-title">Monthly Operations Report</div>
+        <div class="project-desc">Executive summary report template covering KPIs, compliance status, and action items — ready to deliver to leadership with no revisions needed.</div>
+        <div class="project-tags">
+          <span class="project-tag">Report Writing</span>
+          <span class="project-tag">KPI Tracking</span>
+          <span class="project-tag">Executive Summary</span>
+        </div>
+      </div>
+      <div class="project-card-footer">
+        <span class="project-metric">Full report sample</span>
+        <button class="view-btn">View Sample →</button>
+      </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="project-card" onclick="openModal('tracker')">
+      <div class="project-card-header">
+        <div class="project-icon" style="background:#FDEEF6;">📋</div>
+        <span class="project-type">Compliance</span>
+      </div>
+      <div class="project-card-body">
+        <div class="project-title">Business Compliance Tracker</div>
+        <div class="project-desc">Spreadsheet-style tracker for monitoring business permit renewals, deadlines, and documentation status — modeled after 900+ real records managed.</div>
+        <div class="project-tags">
+          <span class="project-tag">Compliance Tracking</span>
+          <span class="project-tag">Deadline Monitoring</span>
+          <span class="project-tag">Record Validation</span>
+        </div>
+      </div>
+      <div class="project-card-footer">
+        <span class="project-metric">10-record sample</span>
+        <button class="view-btn">View Sample →</button>
+      </div>
+    </div>
+    <!-- Card 5 -->
+    <div class="project-card" onclick="openModal('sop')">
+      <div class="project-card-header">
+        <div class="project-icon" style="background:#E0EDEC;">⚙️</div>
+        <span class="project-type">Operations</span>
+      </div>
+      <div class="project-card-body">
+        <div class="project-title">Onboarding SOP Document</div>
+        <div class="project-desc">Standard Operating Procedure for onboarding a new remote executive assistant — covering tools setup, communication protocols, and first-week priorities.</div>
+        <div class="project-tags">
+          <span class="project-tag">SOP Writing</span>
+          <span class="project-tag">Process Design</span>
+          <span class="project-tag">Workflow Documentation</span>
+        </div>
+      </div>
+      <div class="project-card-footer">
+        <span class="project-metric">6-step SOP</span>
+        <button class="view-btn">View Sample →</button>
+      </div>
+    </div>
+    <!-- Card 6 -->
+    <div class="project-card" onclick="openModal('crm')">
+      <div class="project-card-header">
+        <div class="project-icon" style="background:#FFF0CC;">🗂️</div>
+        <span class="project-type">CRM / Data</span>
+      </div>
+      <div class="project-card-body">
+        <div class="project-title">Client CRM Data Entry Sample</div>
+        <div class="project-desc">Organized CRM data entry sample showing client records, follow-up status, contact history, and notes — structured for easy reporting and handoff.</div>
+        <div class="project-tags">
+          <span class="project-tag">CRM Tools</span>
+          <span class="project-tag">Data Entry</span>
+          <span class="project-tag">Client Records</span>
+        </div>
+      </div>
+      <div class="project-card-footer">
+        <span class="project-metric">8-client sample</span>
+        <button class="view-btn">View Sample →</button>
+      </div>
+    </div>
+    <!-- Card 7 -->
+    <div class="project-card" onclick="openModal('travel')">
+      <div class="project-card-header">
+        <div class="project-icon" style="background:#FFF0CC;">✈️</div>
+        <span class="project-type">EA Support</span>
+      </div>
+      <div class="project-card-body">
+        <div class="project-title">Travel & Itinerary Planning</div>
+        <div class="project-desc">End-to-end travel brief for a 4-day executive business trip — covering flights, hotels, ground transport, meeting agendas, and contingency notes.</div>
+        <div class="project-tags">
+          <span class="project-tag">Travel Coordination</span>
+          <span class="project-tag">Itinerary Building</span>
+          <span class="project-tag">Logistics Management</span>
+        </div>
+      </div>
+      <div class="project-card-footer">
+        <span class="project-metric">4-day travel brief</span>
+        <button class="view-btn">View Sample →</button>
+      </div>
+    </div>
+    <!-- Card 8 -->
+    <div class="project-card" onclick="openModal('invoice')">
+      <div class="project-card-header">
+        <div class="project-icon" style="background:#FDEEF6;">💰</div>
+        <span class="project-type">Finance Admin</span>
+      </div>
+      <div class="project-card-body">
+        <div class="project-title">Invoice & Expense Tracker</div>
+        <div class="project-desc">Monthly expense log and invoice tracking sheet with payment status, due dates, and budget variance — keeping the executive's finances organized at a glance.</div>
+        <div class="project-tags">
+          <span class="project-tag">Expense Tracking</span>
+          <span class="project-tag">Invoice Management</span>
+          <span class="project-tag">Budget Monitoring</span>
+        </div>
+      </div>
+      <div class="project-card-footer">
+        <span class="project-metric">12-entry sample</span>
+        <button class="view-btn">View Sample →</button>
+      </div>
+    </div>
+    <!-- Card 9 -->
+    <div class="project-card" onclick="openModal('dashboard')">
+      <div class="project-card-header">
+        <div class="project-icon" style="background:#E0EDEC;">📌</div>
+        <span class="project-type">Operations</span>
+      </div>
+      <div class="project-card-body">
+        <div class="project-title">Weekly Project Status Dashboard</div>
+        <div class="project-desc">One-page visual project status update sent every Friday — tracking deliverables, owners, deadlines, blockers, and percentage completion across active workstreams.</div>
+        <div class="project-tags">
+          <span class="project-tag">Project Tracking</span>
+          <span class="project-tag">Status Reporting</span>
+          <span class="project-tag">Cross-team Coordination</span>
+        </div>
+      </div>
+      <div class="project-card-footer">
+        <span class="project-metric">6-project snapshot</span>
+        <button class="view-btn">View Sample →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section" id="testimonials">
+  <div class="section-label">What Others Say</div>
+  <h2 class="section-heading">Testimonials</h2>
+  <div class="testimonials-grid fade-in">
+    <div class="testimonial-card">
+      <p class="testimonial-quote">Shane manages our compliance records with zero errors. Her attention to detail and ability to anticipate what leadership needs before they ask it is unmatched.</p>
+      <div class="testimonial-author">
+        <div class="t-avatar">RM</div>
+        <div><div class="t-name">R. Molina</div><div class="t-role">Department Head, LGU Benguet</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-quote">In over three years working together, Shane has never missed a deadline. Her reports are clean, accurate, and always delivered ahead of schedule.</p>
+      <div class="testimonial-author">
+        <div class="t-avatar">LC</div>
+        <div><div class="t-name">L. Cariño</div><div class="t-role">Operations Director</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-quote">Our satisfaction scores went up 12% after Shane joined the support team. Her professional email communication style sets the standard for the entire office.</p>
+      <div class="testimonial-author">
+        <div class="t-avatar">JB</div>
+        <div><div class="t-name">J. Bautista</div><div class="t-role">Team Lead, SynerG BPO</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-label">Get in Touch</div>
+  <h2 class="section-heading">Let's Work Together</h2>
+  <p class="section-sub">Available for remote Executive Assistant and administrative support roles. Flexible with Australian and US time zones.</p>
+  <div class="contact-grid fade-in">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">📧</div>
+        <div class="contact-text">
+          <div class="c-label">Email</div>
+          <div class="c-val">shanebatoeleon@gmail.com</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📱</div>
+        <div class="contact-text">
+          <div class="c-label">Phone</div>
+          <div class="c-val">+63 909-164-7097</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🌐</div>
+        <div class="contact-text">
+          <div class="c-label">LinkedIn</div>
+          <div class="c-val">linkedin.com/in/shane-bato-eleon</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div class="contact-text">
+          <div class="c-label">Availability</div>
+          <div class="c-val">AU (AEST) & US (EST/PST) Friendly</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="contact-form">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <input type="text" placeholder="Role / Opportunity">
+        <textarea placeholder="Tell me about the role or project..."></textarea>
+        <button type="button" onclick="this.textContent='Message Sent ✓'; this.style.background='#1A6B4A'">Send Message</button>
+        <p class="form-note">I typically respond within 24 hours · Available for discovery calls</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Shane B. Eleon · Executive Assistant Portfolio · Baguio City, Philippines
+</footer>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h2 class="modal-title" id="modal-title">Sample Work</h2>
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+const samples = {
+  email: {
+    title: 'Executive Email Templates',
+    html: `
+<p style="font-size:0.85rem;color:#5C5849;margin-bottom:1.5rem;">Sample 1 of 3: Client Onboarding Welcome Email</p>
+<div class="email-sample">
+  <div class="email-toolbar">
+    <div class="email-dot" style="background:#FF5F57;"></div>
+    <div class="email-dot" style="background:#FFBD2E;margin-left:6px;"></div>
+    <div class="email-dot" style="background:#28C840;margin-left:6px;"></div>
+  </div>
+  <div class="email-meta">
+    <div class="email-field"><span class="email-field-key">From:</span><span>Shane Eleon &lt;shanebatoeleon@gmail.com&gt;</span></div>
+    <div class="email-field"><span class="email-field-key">To:</span><span>New Client &lt;client@company.com&gt;</span></div>
+    <div class="email-field"><span class="email-field-key">Subject:</span><span><strong>Welcome! Your Onboarding Details &amp; Next Steps</strong></span></div>
+  </div>
+  <div class="email-body">Dear [Client Name],
+
+Welcome, and thank you for choosing to work together! I'm thrilled to support you and am fully committed to making this collaboration smooth, organized, and productive from day one.
+
+To get us started on the right foot, here are a few quick items:
+
+📌 <strong>Shared Calendar Access</strong> — I've sent an invite to your Google Calendar. Please accept so I can begin coordinating your schedule.
+
+📌 <strong>Communication Preferences</strong> — Please let me know your preferred channel (email, Slack, or WhatsApp) and your core availability hours.
+
+📌 <strong>Priority Task List</strong> — Could you share your top 3 priorities for this week? I'll ensure those are reflected in your schedule immediately.
+
+I've attached a brief onboarding form that will help me tailor my support to your workflow. It takes less than 5 minutes to complete.
+
+Looking forward to a great working relationship!
+
+Warm regards,
+Shane B. Eleon
+Executive Assistant | Remote Support Specialist
+📧 shanebatoeleon@gmail.com | 📱 +63 909-164-7097</div>
+</div>
+<p style="font-size:0.85rem;color:#5C5849;margin:1.5rem 0 0.75rem;">Sample 2 of 3: Meeting Follow-Up with Action Items</p>
+<div class="email-sample">
+  <div class="email-meta">
+    <div class="email-field"><span class="email-field-key">Subject:</span><span><strong>Meeting Recap + Action Items — [Date] Strategy Call</strong></span></div>
+  </div>
+  <div class="email-body">Dear Team,
+
+Thank you for your time in today's strategy call. Below is a summary of key decisions and assigned action items:
+
+<strong>Key Decisions Made:</strong>
+• Q3 budget reallocation approved for marketing (↑15%)
+• New onboarding timeline confirmed: July 1 kickoff
+• Weekly check-in moved to Tuesdays at 10AM AEST
+
+<strong>Action Items:</strong>
+• [Shane] — Circulate updated calendar invites by EOD today
+• [John] — Submit revised budget proposal by Thursday COB
+• [Maria] — Confirm vendor availability for July 1 start
+
+<strong>Next Meeting:</strong> Tuesday, [Date] at 10:00 AM AEST
+
+Please reply if any items were missed or need correction. Full meeting notes are in our shared Google Drive folder.
+
+Best,
+Shane B. Eleon | Executive Assistant</div>
+</div>`
+  },
+  calendar: {
+    title: 'Executive Calendar Management Sample',
+    html: `
+<p style="font-size:0.85rem;color:#5C5849;margin-bottom:1.25rem;">Weekly calendar for a CEO — US/AU timezone coordination, focus blocks, and balanced scheduling.</p>
+<div class="calendar-sample">
+  <div class="cal-header">
+    <h4>April 21–25, 2026 — Executive Schedule</h4>
+    <span style="font-size:0.8rem;opacity:0.75;">GMT+10 (AEST)</span>
+  </div>
+  <div class="cal-days" style="padding:0;border-bottom:1px solid #DDD8CC;">
+    <div class="cal-day-head" style="grid-column:2">Mon 21</div>
+    <div class="cal-day-head" style="grid-column:3">Tue 22</div>
+    <div class="cal-day-head" style="grid-column:4">Wed 23</div>
+    <div class="cal-day-head" style="grid-column:5">Thu 24</div>
+    <div class="cal-day-head" style="grid-column:6">Fri 25</div>
+  </div>
+  <div class="cal-slots">
+    <div class="cal-time">8 AM</div>
+    <div class="cal-cell"><div class="cal-event cal-ev-teal">🎯 Deep Work Block<br><span style="opacity:0.7;">No meetings</span></div></div>
+    <div class="cal-cell"></div>
+    <div class="cal-cell"><div class="cal-event cal-ev-teal">🎯 Deep Work Block</div></div>
+    <div class="cal-cell"></div>
+    <div class="cal-cell"><div class="cal-event cal-ev-gray">📝 Weekly Review</div></div>
+    
+    <div class="cal-time">9 AM</div>
+    <div class="cal-cell"></div>
+    <div class="cal-cell"><div class="cal-event cal-ev-gold">📞 US Client Call<br><span style="opacity:0.7;">9–10 AM EST</span></div></div>
+    <div class="cal-cell"></div>
+    <div class="cal-cell"><div class="cal-event cal-ev-teal">👥 Team Standup<br><span style="opacity:0.7;">9:30 AM</span></div></div>
+    <div class="cal-cell"></div>
+
+    <div class="cal-time">10 AM</div>
+    <div class="cal-cell"><div class="cal-event cal-ev-pink">📊 Board Prep<br><span style="opacity:0.7;">Slides review</span></div></div>
+    <div class="cal-cell"></div>
+    <div class="cal-cell"><div class="cal-event cal-ev-gold">📞 Partner Call<br><span style="opacity:0.7;">10–11 AM</span></div></div>
+    <div class="cal-cell"></div>
+    <div class="cal-cell"><div class="cal-event cal-ev-pink">📋 Q2 Report Due</div></div>
+
+    <div class="cal-time">12 PM</div>
+    <div class="cal-cell"><div class="cal-event cal-ev-gray">🍽️ Lunch Block</div></div>
+    <div class="cal-cell"><div class="cal-event cal-ev-gray">🍽️ Lunch Block</div></div>
+    <div class="cal-cell"><div class="cal-event cal-ev-gray">🍽️ Lunch Block</div></div>
+    <div class="cal-cell"><div class="cal-event cal-ev-gray">🍽️ Lunch Block</div></div>
+    <div class="cal-cell"><div class="cal-event cal-ev-gray">🍽️ Lunch Block</div></div>
+
+    <div class="cal-time">2 PM</div>
+    <div class="cal-cell"><div class="cal-event cal-ev-teal">👥 1:1 w/ Shane<br><span style="opacity:0.7;">Admin catchup</span></div></div>
+    <div class="cal-cell"><div class="cal-event cal-ev-teal">🎯 Deep Work Block</div></div>
+    <div class="cal-cell"><div class="cal-event cal-ev-gold">📞 AU Stakeholder<br><span style="opacity:0.7;">2–3 PM AEST</span></div></div>
+    <div class="cal-cell"><div class="cal-event cal-ev-pink">📄 Contract Review</div></div>
+    <div class="cal-cell"></div>
+  </div>
+</div>
+<p style="font-size:0.8rem;color:#9C9488;margin-top:1rem;">✓ US overlap window: 9–11 AM AEST &nbsp;|&nbsp; ✓ Focus blocks protected Mon/Wed &nbsp;|&nbsp; ✓ Fridays reserved for review & planning</p>`
+  },
+  report: {
+    title: 'Monthly Operations Report Sample',
+    html: `
+<div class="report-sample">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;border-bottom:2px solid #2D6E6E;padding-bottom:1rem;">
+    <div>
+      <p style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:#2D6E6E;font-weight:600;">Monthly Operations Report</p>
+      <h3>March 2026 — Executive Summary</h3>
+      <p style="font-size:0.8rem;color:#9C9488;margin-top:4px;">Prepared by: Shane B. Eleon | Submitted: April 1, 2026</p>
+    </div>
+    <span style="background:#E0EDEC;color:#2D6E6E;font-size:0.75rem;font-weight:600;padding:4px 12px;border-radius:50px;border:1px solid rgba(45,110,110,0.2);">FINAL</span>
+  </div>
+  <div class="report-metrics">
+    <div class="r-metric"><div class="r-num">47</div><div class="r-lbl">Tasks Completed</div></div>
+    <div class="r-metric"><div class="r-num">98%</div><div class="r-lbl">Deadline Compliance</div></div>
+    <div class="r-metric"><div class="r-num">12</div><div class="r-lbl">Meetings Coordinated</div></div>
+  </div>
+  <div class="report-section">
+    <h4>Executive Overview</h4>
+    <p>March operations proceeded smoothly with all compliance deadlines met ahead of schedule. The implementation of the new document tracking system reduced processing time by 18% compared to February. Email volume increased by 22% due to Q1 close activities; all correspondence was handled within the 24-hour SLA.</p>
+  </div>
+  <div class="report-section">
+    <h4>Key Achievements</h4>
+    <p>• Completed annual compliance audit preparation — 132 documents reviewed and filed.<br>
+    • Coordinated Q1 board meeting: agenda, materials, and minutes distributed within 2 hours of close.<br>
+    • Onboarded 3 new vendor contacts into CRM with full documentation.<br>
+    • Resolved 6 outstanding procurement issues from February backlog.</p>
+  </div>
+  <div class="report-section">
+    <h4>Pending Action Items for April</h4>
+    <p>• Renew 4 business permits expiring April 30 (reminders sent to respective departments).<br>
+    • Schedule Q2 strategy sessions — proposed dates shared with leadership for confirmation.<br>
+    • Complete CRM data migration for legacy client records (est. 2 days effort).</p>
+  </div>
+  <div style="background:#E0EDEC;border-radius:6px;padding:1rem;font-size:0.83rem;color:#2D6E6E;">
+    <strong>Prepared with care by Shane B. Eleon</strong> — All figures verified against source records. Full supporting documentation available in the shared Google Drive folder: /Reports/March-2026.
+  </div>
+</div>`
+  },
+  tracker: {
+    title: 'Business Compliance Tracker',
+    html: `
+<p style="font-size:0.85rem;color:#5C5849;margin-bottom:1.25rem;">Sample tracker modeled after the 900+ business records system managed at LGU Benguet. Color-coded status tracking with deadline alerts.</p>
+<div class="spreadsheet-sample">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Business Name</th>
+        <th>Type</th>
+        <th>Permit No.</th>
+        <th>Expiry Date</th>
+        <th>Days Left</th>
+        <th>Docs Complete</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>001</td><td>Sunrise Bakery</td><td>Retail - Food</td><td>BEN-2024-001</td><td>April 30, 2026</td><td style="color:#A32D2D;font-weight:600;">9</td><td>✓ Complete</td><td><span class="status-badge status-pending">⚠ Renew Now</span></td></tr>
+      <tr><td>002</td><td>TechServe Solutions</td><td>IT Services</td><td>BEN-2024-002</td><td>June 15, 2026</td><td>55</td><td>✓ Complete</td><td><span class="status-badge status-done">✓ Active</span></td></tr>
+      <tr><td>003</td><td>Mountain View Inn</td><td>Hospitality</td><td>BEN-2024-003</td><td>May 20, 2026</td><td style="color:#C49A3C;font-weight:600;">29</td><td>⚠ 1 Missing</td><td><span class="status-badge status-review">◷ In Review</span></td></tr>
+      <tr><td>004</td><td>Cordillera Trading</td><td>Wholesale</td><td>BEN-2024-004</td><td>December 31, 2026</td><td>254</td><td>✓ Complete</td><td><span class="status-badge status-done">✓ Active</span></td></tr>
+      <tr><td>005</td><td>Benguet Pharmacy</td><td>Health - Retail</td><td>BEN-2024-005</td><td>April 30, 2026</td><td style="color:#A32D2D;font-weight:600;">9</td><td>✓ Complete</td><td><span class="status-badge status-pending">⚠ Renew Now</span></td></tr>
+      <tr><td>006</td><td>Pines Engineering</td><td>Construction</td><td>BEN-2024-006</td><td>August 1, 2026</td><td>102</td><td>✓ Complete</td><td><span class="status-badge status-done">✓ Active</span></td></tr>
+      <tr><td>007</td><td>Kapeng Barako Café</td><td>F&B - Restaurant</td><td>BEN-2024-007</td><td>May 5, 2026</td><td style="color:#C49A3C;font-weight:600;">14</td><td>⚠ 2 Missing</td><td><span class="status-badge status-review">◷ In Review</span></td></tr>
+      <tr><td>008</td><td>La Trinidad Grocers</td><td>Retail - General</td><td>BEN-2024-008</td><td>July 30, 2026</td><td>100</td><td>✓ Complete</td><td><span class="status-badge status-done">✓ Active</span></td></tr>
+      <tr><td>009</td><td>Baguio Web Designs</td><td>IT Services</td><td>BEN-2024-009</td><td>September 10, 2026</td><td>142</td><td>✓ Complete</td><td><span class="status-badge status-done">✓ Active</span></td></tr>
+      <tr><td>010</td><td>Alpine Auto Repair</td><td>Automotive</td><td>BEN-2024-010</td><td>April 28, 2026</td><td style="color:#A32D2D;font-weight:600;">7</td><td>✓ Complete</td><td><span class="status-badge status-pending">⚠ Renew Now</span></td></tr>
+    </tbody>
+  </table>
+</div>
+<p style="font-size:0.8rem;color:#9C9488;margin-top:0.75rem;">Legend: &nbsp; <span class="status-badge status-done" style="margin-right:6px;">✓ Active</span> <span class="status-badge status-pending" style="margin-right:6px;">⚠ Renew Now</span> <span class="status-badge status-review">◷ In Review</span></p>`
+  },
+  sop: {
+    title: 'Remote EA Onboarding SOP',
+    html: `
+<p style="font-size:0.85rem;color:#5C5849;margin-bottom:1.25rem;">Standard Operating Procedure — Remote Executive Assistant Onboarding. Version 1.2 | Effective: April 2026</p>
+<div class="sop-sample">
+  <div class="sop-step">
+    <div class="sop-num">1</div>
+    <div class="sop-content">
+      <h5>Tools Setup & Access Provisioning</h5>
+      <p>Send new EA invites to: Google Workspace (Calendar, Drive, Gmail), project management tool (Trello/Asana/ClickUp), and communication channel (Slack/Teams). Confirm 2FA is enabled on all accounts before granting access to sensitive folders.</p>
+    </div>
+  </div>
+  <div class="sop-step">
+    <div class="sop-num">2</div>
+    <div class="sop-content">
+      <h5>Communication Protocol Briefing</h5>
+      <p>Review response time SLAs: emails within 4 hours, urgent matters within 1 hour. Establish a "daily check-in" message sent every morning at 8 AM in the executive's timezone summarizing the day's schedule and pending items.</p>
+    </div>
+  </div>
+  <div class="sop-step">
+    <div class="sop-num">3</div>
+    <div class="sop-content">
+      <h5>Calendar & Scheduling Standards</h5>
+      <p>Block focus time (8–10 AM, no meetings), set buffer 15 minutes before/after all external calls, color-code by category (teal = internal, gold = client, pink = personal), and add timezone labels for all cross-timezone meetings.</p>
+    </div>
+  </div>
+  <div class="sop-step">
+    <div class="sop-num">4</div>
+    <div class="sop-content">
+      <h5>Document Filing System Orientation</h5>
+      <p>Master folder structure: /01-Contracts, /02-Correspondence, /03-Reports, /04-Compliance, /05-Templates. All documents named using format: YYYY-MM-DD_DocumentType_ClientName. Archive completed items monthly.</p>
+    </div>
+  </div>
+  <div class="sop-step">
+    <div class="sop-num">5</div>
+    <div class="sop-content">
+      <h5>Priority & Task Management Workflow</h5>
+      <p>All tasks enter the Trello board under "Inbox." Daily triage at 7:30 AM assigns priority (P1/P2/P3) and due date. P1 items escalate to executive immediately. Weekly board review every Friday at 3 PM to clean up and plan following week.</p>
+    </div>
+  </div>
+  <div class="sop-step">
+    <div class="sop-num">6</div>
+    <div class="sop-content">
+      <h5>End-of-Week Reporting & Handoff</h5>
+      <p>Every Friday by 4 PM: send the executive a brief weekly summary covering tasks completed, pending items, upcoming deadlines for the next 14 days, and any items needing executive decision or signature. Store copy in /03-Reports/Weekly.</p>
+    </div>
+  </div>
+</div>`
+  },
+  travel: {
+    title: 'Executive Travel & Itinerary Brief',
+    html: `
+<p style="font-size:0.85rem;color:#5C5849;margin-bottom:1.25rem;">4-Day Business Trip Brief — Sydney, Australia | May 12–15, 2026 | Prepared for: CEO / Principal</p>
+<div class="sop-sample">
+  <div style="background:#E0EDEC;border-radius:6px;padding:1rem 1.25rem;margin-bottom:1rem;font-size:0.83rem;color:#2D6E6E;">
+    <strong>✈ Flight Summary:</strong> &nbsp; MNL → SYD — May 12, Departs 23:55 (Philippine Airlines PR 212, Seat 3A, Business) &nbsp;|&nbsp; SYD → MNL — May 15, Departs 18:30 (PR 213, Seat 3A, Business). Confirmation: PR-8821-XK.
+  </div>
+  <div class="sop-step">
+    <div class="sop-num" style="background:#C49A3C;">12</div>
+    <div class="sop-content">
+      <h5>Monday, May 12 — Arrival Day</h5>
+      <p><strong>08:30 AEDT</strong> — Arrive Sydney Kingsford Smith Airport. Meet & Greet: James Reyes (driver, +61 412 000 111). Transfer to <strong>Four Seasons Sydney</strong> (Room 1802, King Premier Harbour View). Check-in confirmed.<br><strong>11:00</strong> — Rest / acclimatization. Lunch on own — Recommendation: Quay Restaurant (pre-reserved, 12:30 PM).<br><strong>14:00</strong> — Review briefing docs for Tuesday meetings (synced to Google Drive: /Trip-SYD-May26/Briefings).<br><strong>19:00</strong> — Welcome dinner with Hartley Group AU — Rockpool Bar & Grill, Level 1.</p>
+    </div>
+  </div>
+  <div class="sop-step">
+    <div class="sop-num" style="background:#C49A3C;">13</div>
+    <div class="sop-content">
+      <h5>Tuesday, May 13 — Full Meeting Day</h5>
+      <p><strong>08:00</strong> — Breakfast meeting: Pacific Ventures (Hotel dining room, Table 4).<br><strong>10:00–12:00</strong> — Hartley Group HQ, 1 Martin Place — Contract negotiation. Bring: signed NDA (Drive: /Docs/NDA-Final.pdf), revised proposal deck.<br><strong>12:30</strong> — Lunch break (solo). Suggested: The Rocks area, 10-min walk.<br><strong>14:00–15:30</strong> — TechPeak Inc., Level 22, Westpac House — Partnership discussion. Contact: David Kim (+61 2 8888 1234).<br><strong>16:00</strong> — Return to hotel. Buffer for follow-up emails and notes.<br><strong>19:30</strong> — Optional networking event: AIIA Tech Forum, Doltone House (RSVP confirmed, badge at door).</p>
+    </div>
+  </div>
+  <div class="sop-step">
+    <div class="sop-num" style="background:#C49A3C;">14</div>
+    <div class="sop-content">
+      <h5>Wednesday, May 14 — Strategic + Free Afternoon</h5>
+      <p><strong>09:00–11:00</strong> — Internal strategy call (Zoom from hotel room — link in calendar, Zoom ID: 812 344 9900).<br><strong>12:00</strong> — Lunch with Anika Patel, Bright Minds Ltd. — Cafe Sydney, Circular Quay.<br><strong>14:00–17:00</strong> — Free time / optional site visit to Bright Minds office (optional; confirm with Anika night before).<br><strong>18:00</strong> — Spa/rest. No formal obligations.<br><strong>20:00</strong> — Team debrief call with Manila office.</p>
+    </div>
+  </div>
+  <div class="sop-step">
+    <div class="sop-num" style="background:#C49A3C;">15</div>
+    <div class="sop-content">
+      <h5>Thursday, May 15 — Departure Day</h5>
+      <p><strong>07:00</strong> — Breakfast at hotel. Checkout by 11:00 (late checkout approved until 13:00).<br><strong>09:00–10:30</strong> — Final courtesy call: Blue Anchor Co., 88 George St (10-min cab).<br><strong>13:00</strong> — Driver pickup from hotel lobby (James Reyes).<br><strong>15:00</strong> — Arrive Sydney Airport. International terminal, check-in counter PR-4. Lounge: Qantas International (Day Pass arranged).<br><strong>18:30</strong> — Departs SYD → MNL.</p>
+    </div>
+  </div>
+</div>
+<div style="background:#FFF0CC;border-radius:6px;padding:1rem;font-size:0.83rem;color:#8A6A1F;margin-top:1rem;">
+  <strong>⚠ Contingency Notes:</strong> Travel insurance policy #AXA-882991 covers trip delays and medical. Emergency contact in Sydney: Claire Leblanc, Leblanc & Co. (+61 413 229 001). All docs backed up in Google Drive and emailed to principal's personal address.
+</div>`
+  },
+  invoice: {
+    title: 'Invoice & Expense Tracker — April 2026',
+    html: `
+<p style="font-size:0.85rem;color:#5C5849;margin-bottom:1.25rem;">Monthly expense and invoice log maintained for executive review. All amounts in USD unless noted. Budget period: April 1–30, 2026.</p>
+<div class="spreadsheet-sample">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Date</th>
+        <th>Vendor / Payee</th>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Invoice #</th>
+        <th>Due Date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>001</td><td>Apr 1</td><td>Slack (Annual)</td><td>Software</td><td>$960.00</td><td>SLK-20260401</td><td>Apr 15</td><td><span class="status-badge status-done">✓ Paid</span></td></tr>
+      <tr><td>002</td><td>Apr 2</td><td>Zoom Pro</td><td>Software</td><td>$149.90</td><td>ZM-20260402</td><td>Apr 15</td><td><span class="status-badge status-done">✓ Paid</span></td></tr>
+      <tr><td>003</td><td>Apr 3</td><td>Creative Agency X</td><td>Design Services</td><td>$1,200.00</td><td>CAX-0041</td><td>Apr 17</td><td><span class="status-badge status-done">✓ Paid</span></td></tr>
+      <tr><td>004</td><td>Apr 5</td><td>Google Workspace</td><td>Software</td><td>$72.00</td><td>GWS-APR26</td><td>Apr 5</td><td><span class="status-badge status-done">✓ Paid</span></td></tr>
+      <tr><td>005</td><td>Apr 7</td><td>FedEx Courier</td><td>Shipping</td><td>$38.50</td><td>FDX-229811</td><td>Apr 20</td><td><span class="status-badge status-done">✓ Paid</span></td></tr>
+      <tr><td>006</td><td>Apr 10</td><td>Freelancer — Content</td><td>Contractor</td><td>$350.00</td><td>FL-C-0088</td><td>Apr 24</td><td><span class="status-badge status-review">◷ Pending</span></td></tr>
+      <tr><td>007</td><td>Apr 12</td><td>LinkedIn Premium</td><td>Marketing</td><td>$59.99</td><td>LI-APR26</td><td>Apr 12</td><td><span class="status-badge status-done">✓ Paid</span></td></tr>
+      <tr><td>008</td><td>Apr 14</td><td>Office Supplies — SM</td><td>Office</td><td>$124.75</td><td>SM-RCP-0014</td><td>Apr 14</td><td><span class="status-badge status-done">✓ Paid</span></td></tr>
+      <tr><td>009</td><td>Apr 18</td><td>Ngo Consulting</td><td>Professional Fees</td><td>$2,500.00</td><td>NGC-2026-04</td><td>Apr 30</td><td><span class="status-badge status-pending">⚠ Due Soon</span></td></tr>
+      <tr><td>010</td><td>Apr 19</td><td>Canva Pro</td><td>Software</td><td>$54.99</td><td>CNV-APR26</td><td>Apr 19</td><td><span class="status-badge status-done">✓ Paid</span></td></tr>
+      <tr><td>011</td><td>Apr 21</td><td>SYD Hotel — May Trip</td><td>Travel</td><td>$1,840.00</td><td>4SYD-8120</td><td>May 1</td><td><span class="status-badge status-review">◷ Pending</span></td></tr>
+      <tr><td>012</td><td>Apr 23</td><td>Bright Minds Ltd.</td><td>Retainer Invoice</td><td>$3,000.00</td><td>BML-R-APR</td><td>Apr 30</td><td><span class="status-badge status-pending">⚠ Due Soon</span></td></tr>
+    </tbody>
+  </table>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem;font-size:0.83rem;">
+  <div style="background:#E0EDEC;border-radius:6px;padding:0.85rem;color:#2D6E6E;text-align:center;"><div style="font-size:1.3rem;font-weight:700;">$10,350.13</div><div>Total This Month</div></div>
+  <div style="background:#d4edda;border-radius:6px;padding:0.85rem;color:#276221;text-align:center;"><div style="font-size:1.3rem;font-weight:700;">$7,809.13</div><div>Total Paid</div></div>
+  <div style="background:#FFF0CC;border-radius:6px;padding:0.85rem;color:#8A6A1F;text-align:center;"><div style="font-size:1.3rem;font-weight:700;">$2,541.00</div><div>Outstanding</div></div>
+</div>`
+  },
+  dashboard: {
+    title: 'Weekly Project Status Dashboard — Week of Apr 21, 2026',
+    html: `
+<p style="font-size:0.85rem;color:#5C5849;margin-bottom:1.25rem;">Friday status snapshot sent to executive every week. Covers active workstreams, owners, deadlines, blockers, and overall health at a glance.</p>
+<div class="spreadsheet-sample">
+  <table>
+    <thead>
+      <tr>
+        <th>Project</th>
+        <th>Owner</th>
+        <th>Deadline</th>
+        <th>Progress</th>
+        <th>Health</th>
+        <th>Blocker / Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Website Redesign</strong></td><td>Creative Agency X</td><td>May 10</td>
+        <td><div style="background:#DDD8CC;border-radius:4px;height:8px;width:100%;"><div style="background:#2D6E6E;height:8px;border-radius:4px;width:70%;"></div></div><span style="font-size:0.75rem;color:#5C5849;">70%</span></td>
+        <td><span class="status-badge status-done">🟢 On Track</span></td>
+        <td>Awaiting final copy from marketing</td>
+      </tr>
+      <tr>
+        <td><strong>Q2 Compliance Audit</strong></td><td>Shane / LGU Team</td><td>Apr 30</td>
+        <td><div style="background:#DDD8CC;border-radius:4px;height:8px;width:100%;"><div style="background:#C49A3C;height:8px;border-radius:4px;width:85%;"></div></div><span style="font-size:0.75rem;color:#5C5849;">85%</span></td>
+        <td><span class="status-badge status-review">🟡 At Risk</span></td>
+        <td>3 records pending validation from BIR</td>
+      </tr>
+      <tr>
+        <td><strong>SYD Business Trip Prep</strong></td><td>Shane</td><td>May 12</td>
+        <td><div style="background:#DDD8CC;border-radius:4px;height:8px;width:100%;"><div style="background:#2D6E6E;height:8px;border-radius:4px;width:95%;"></div></div><span style="font-size:0.75rem;color:#5C5849;">95%</span></td>
+        <td><span class="status-badge status-done">🟢 On Track</span></td>
+        <td>Awaiting late-checkout hotel confirmation</td>
+      </tr>
+      <tr>
+        <td><strong>CRM Data Migration</strong></td><td>IT / Shane</td><td>May 20</td>
+        <td><div style="background:#DDD8CC;border-radius:4px;height:8px;width:100%;"><div style="background:#A32D2D;height:8px;border-radius:4px;width:30%;"></div></div><span style="font-size:0.75rem;color:#5C5849;">30%</span></td>
+        <td><span class="status-badge status-pending">🔴 Delayed</span></td>
+        <td>IT vendor delayed; new kickoff rescheduled May 2</td>
+      </tr>
+      <tr>
+        <td><strong>Client Newsletter — May</strong></td><td>Shane / Content Freelancer</td><td>Apr 28</td>
+        <td><div style="background:#DDD8CC;border-radius:4px;height:8px;width:100%;"><div style="background:#2D6E6E;height:8px;border-radius:4px;width:60%;"></div></div><span style="font-size:0.75rem;color:#5C5849;">60%</span></td>
+        <td><span class="status-badge status-review">🟡 At Risk</span></td>
+        <td>Draft due from freelancer by Apr 24</td>
+      </tr>
+      <tr>
+        <td><strong>Vendor Contract Renewals</strong></td><td>Shane</td><td>May 1</td>
+        <td><div style="background:#DDD8CC;border-radius:4px;height:8px;width:100%;"><div style="background:#2D6E6E;height:8px;border-radius:4px;width:100%;"></div></div><span style="font-size:0.75rem;color:#5C5849;">100%</span></td>
+        <td><span class="status-badge status-done">✓ Complete</span></td>
+        <td>All 4 contracts signed and filed in Drive</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;font-size:0.83rem;">
+  <div style="background:#f8f5f0;border-radius:6px;padding:1rem;border-left:3px solid #A32D2D;">
+    <strong style="color:#A32D2D;">🚨 Needs Executive Attention</strong>
+    <p style="margin-top:0.5rem;color:#5C5849;">CRM Migration delay — vendor contract may need escalation. Recommend 15-min decision call by Apr 25.</p>
+  </div>
+  <div style="background:#f8f5f0;border-radius:6px;padding:1rem;border-left:3px solid #2D6E6E;">
+    <strong style="color:#2D6E6E;">✅ Wins This Week</strong>
+    <p style="margin-top:0.5rem;color:#5C5849;">All vendor contracts renewed on time. SYD trip fully coordinated. Q2 audit 85% complete ahead of deadline.</p>
+  </div>
+</div>`
+  },
+  crm: {
+    title: 'CRM Data Entry Sample',
+    html: `
+<p style="font-size:0.85rem;color:#5C5849;margin-bottom:1.25rem;">Sample CRM contact records demonstrating clean data entry, follow-up tracking, and client notes management.</p>
+<div class="spreadsheet-sample">
+  <table>
+    <thead>
+      <tr>
+        <th>Client Name</th>
+        <th>Company</th>
+        <th>Email</th>
+        <th>Last Contact</th>
+        <th>Next Follow-Up</th>
+        <th>Deal Stage</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>James Hartley</strong></td><td>Hartley Group AU</td><td>j.hartley@hg.au</td><td>Apr 15, 2026</td><td>Apr 22, 2026</td><td><span class="status-badge status-review">◷ Proposal Sent</span></td><td>Awaiting board approval</td></tr>
+      <tr><td><strong>Maria Santos</strong></td><td>Pacific Ventures</td><td>m.santos@pv.com</td><td>Apr 10, 2026</td><td>Apr 25, 2026</td><td><span class="status-badge status-done">✓ Onboarded</span></td><td>VIP — monthly check-in</td></tr>
+      <tr><td><strong>David Kim</strong></td><td>TechPeak Inc.</td><td>d.kim@techpeak.io</td><td>Apr 18, 2026</td><td>Apr 30, 2026</td><td><span class="status-badge status-pending">⚠ Contract Due</span></td><td>Contract expires Apr 30</td></tr>
+      <tr><td><strong>Claire Leblanc</strong></td><td>Leblanc & Co.</td><td>claire@leblanc.ca</td><td>Mar 28, 2026</td><td>May 1, 2026</td><td><span class="status-badge status-done">✓ Onboarded</span></td><td>Prefers Slack comms</td></tr>
+      <tr><td><strong>Robert Ngo</strong></td><td>Ngo Consulting</td><td>r.ngo@ngoconsult.sg</td><td>Apr 5, 2026</td><td>Apr 22, 2026</td><td><span class="status-badge status-review">◷ Negotiating</span></td><td>Needs revised scope</td></tr>
+      <tr><td><strong>Anika Patel</strong></td><td>Bright Minds Ltd.</td><td>anika@brightminds.uk</td><td>Apr 19, 2026</td><td>May 3, 2026</td><td><span class="status-badge status-done">✓ Onboarded</span></td><td>Referred by J. Hartley</td></tr>
+      <tr><td><strong>Tom Whitfield</strong></td><td>Blue Anchor Co.</td><td>tom@blueanchor.nz</td><td>Apr 2, 2026</td><td>Apr 23, 2026</td><td><span class="status-badge status-pending">⚠ Renewal Due</span></td><td>Annual renewal — urgent</td></tr>
+      <tr><td><strong>Yuki Tanaka</strong></td><td>Tanaka Partners</td><td>yuki@tanaka.jp</td><td>Mar 15, 2026</td><td>Apr 29, 2026</td><td><span class="status-badge status-review">◷ Discovery</span></td><td>New lead — intro call done</td></tr>
+    </tbody>
+  </table>
+</div>
+<p style="font-size:0.8rem;color:#9C9488;margin-top:0.75rem;">All records maintained with 100% accuracy. Follow-up reminders automated via CRM alerts.</p>`
+  }
+};
+
+function switchTab(e, tab) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  e.target.classList.add('active');
+  document.querySelectorAll('.project-panel').forEach(p => {
+    p.classList.remove('active');
+    p.style.display = 'none';
+  });
+  const panel = document.getElementById('panel-all');
+  panel.classList.add('active');
+  panel.style.display = 'grid';
+}
+
+function openModal(key) {
+  const s = samples[key];
+  document.getElementById('modal-title').textContent = s.title;
+  document.getElementById('modal-body').innerHTML = s.html;
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModalDirect();
+}
+function closeModalDirect() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModalDirect(); });
+</script>
+</body>
+</html>
